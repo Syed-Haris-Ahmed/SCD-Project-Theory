@@ -21,5 +21,10 @@ Contributing:
 If you choose to contribute to this project, you agree to abide by the project's guidelines and contribute in a manner consistent with the intended purpose of the project. Contributions that violate the project's purpose or involve malicious intent will not be accepted.
 
 Last Update By
+<<<<<<< HEAD
 Syed Haris Ahmed
 15-12-2023
+=======
+Muhammad Abbas Abid
+14-12-2023
+>>>>>>> origin/main
