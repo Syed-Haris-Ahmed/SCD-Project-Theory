@@ -34,7 +34,12 @@ h1, h2, h3, li {
 }
 
 .options {
+    width: auto;
+    height: auto;
+    /* background-color: black; */
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .auth {
@@ -42,8 +47,6 @@ h1, h2, h3, li {
 }
 
 .option-buttons {
-    position: relative;
-    left: 70px;
     font-family: sans-serif;
     color: white;
     background-color: transparent;
