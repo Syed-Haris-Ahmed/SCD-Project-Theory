@@ -27,7 +27,7 @@ class RegisterController extends Controller
 
             } else {
                 $validatedData['roleid']=1;
-                $validatedData['location']=null;
+                $validatedData['locations']=null;
             }
 
             $user = new User([
