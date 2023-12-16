@@ -20,6 +20,8 @@ class User extends Model
         'username',
         'password',
         'email',
+        'roleid',
+        'cnic',
         'locations'
     ];
 }
