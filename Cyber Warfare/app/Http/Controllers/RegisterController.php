@@ -37,7 +37,7 @@ class RegisterController extends Controller
                 'cnic'     => $validatedData['cnic'],
                 'email' => $validatedData['email'],
                 'roleid' => $validatedData['roleid'] , 
-                'location' => $validatedData['locations'] ?? null, 
+                'locations' => $validatedData['locations'] ?? null, 
             ]);
 
             $user->save();

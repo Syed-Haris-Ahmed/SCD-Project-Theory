@@ -18,6 +18,6 @@ class User extends Model
         'username',
         'password',
         'email',
-        'location'
+        'locations'
     ];
 }
