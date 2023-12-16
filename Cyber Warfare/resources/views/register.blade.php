@@ -7,28 +7,28 @@
     <title>Register</title>
 </head>
 <body>
-<form method="POST" action="{{ route('register') }}">
+<form method="POST" action="{{ route('reguser') }}">
     @csrf
 
-    <!-- Username -->
+    
     <div>
         <label for="username">Username</label>
         <input type="text" name="username" id="username" required>
     </div>
 
-    <!-- Email -->
+    
     <div>
         <label for="email">Email</label>
         <input type="email" name="email" id="email" required>
     </div>
 
-    <!-- Password -->
+    
     <div>
         <label for="password">Password</label>
         <input type="password" name="password" id="password" required>
     </div>
 
-    <!-- Border Resident Checkbox -->
+    
     <div>
         <label>
             <input type="checkbox" name="border_resident" id="border_resident">
