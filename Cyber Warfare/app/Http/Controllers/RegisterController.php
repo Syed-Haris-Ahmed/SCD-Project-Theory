@@ -16,7 +16,7 @@ class RegisterController extends Controller
 
             $validatedData = $request->validate([
                 'username' => 'required|string|max:100|unique:users,username',
-                'cnic' => 'required|regex:/^\d{5}-\d{7}$/|max:13',
+                'cnic' => 'required|digits:13|unique:users,cnic',
                 'password' => 'required|string|min:6',
                 'email' => 'required|email|unique:users,email',
                 'locations' => 'nullable|string',
