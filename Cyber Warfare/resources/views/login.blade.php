@@ -12,7 +12,7 @@
 
 <div class="login-container">
     <h2>Login</h2>
-    <form method="POST" action="{{ route('login') }}">
+    <form method="POST" action="{{ route('loginuser') }}">
         @csrf
 
         <!-- Username -->
