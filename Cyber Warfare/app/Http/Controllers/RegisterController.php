@@ -15,10 +15,10 @@ class RegisterController extends Controller
     public function storeData(Request $request){
 
             $validatedData = $request->validate([
-                'username' => 'required|string|max:100|unique:user,username',
+                'username' => 'required|string|max:100|unique:users,username',
                 'cnic' => 'required|regex:/^\d{5}-\d{7}$/|max:13',
                 'password' => 'required|string|min:6',
-                'email' => 'required|email|unique:user,email',
+                'email' => 'required|email|unique:users,email',
                 'locations' => 'nullable|string',
             ]);
             
