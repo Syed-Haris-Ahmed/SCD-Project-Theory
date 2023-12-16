@@ -16,12 +16,13 @@ class RegisterController extends Controller
 
             $validatedData = $request->validate([
                 'username' => 'required|string|max:100|unique:user,username',
+                'cnic' => 'required|regex:/^\d{5}-\d{7}$/|max:13',
                 'password' => 'required|string|min:6',
                 'email' => 'required|email|unique:user,email',
                 'locations' => 'nullable|string',
             ]);
             
-            if($request->has('locations')){
+            if($request->has('border_resident')){
 
                 $validatedData['roleid']=2; 
 
@@ -32,7 +33,8 @@ class RegisterController extends Controller
 
             $user = new User([
                 'username' => $validatedData['username'],
-                'password' => $validatedData['password'], 
+                'password' => $validatedData['password'],
+                'cnic'     => $validatedData['cnic'],
                 'email' => $validatedData['email'],
                 'roleid' => $validatedData['roleid'] , 
                 'location' => $validatedData['locations'] ?? null, 

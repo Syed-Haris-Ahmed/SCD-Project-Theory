@@ -28,6 +28,11 @@
         <input type="password" name="password" id="password" required>
     </div>
 
+    <div>
+        <label for="cnic">CNIC Number</label>
+        <input type="text" id="cnic" name="cnic" pattern="[0-9]{13}" maxlength="13" placeholder="Enter 13-digit CNIC" required>
+    </div>
+
     
     <div>
         <label>
