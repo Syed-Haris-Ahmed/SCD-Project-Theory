@@ -36,16 +36,16 @@ class RegisterController extends Controller
 
             error_log(print_r($validatedData, true));
 
-            // $user = new User([
-            //     'username' => $validatedData['username'],
-            //     'password' => $validatedData['password'],
-            //     'cnic'     => $validatedData['cnic'],
-            //     'email' => $validatedData['email'],
-            //     'roleid' => $validatedData['roleid'] , 
-            //     'locations' => $validatedData['locations'] ?? null, 
-            // ]);
+            $user = new User([
+                'username' => $validatedData['username'],
+                'password' => $validatedData['password'],
+                'cnic'     => $validatedData['cnic'],
+                'email' => $validatedData['email'],
+                'roleid' => $validatedData['roleid'] , 
+                'locations' => $validatedData['locations'] ?? null, 
+            ]);
 
-            $user = User::create($validatedData);
+            $user->save();
 
         return redirect()->route('home');
     }
