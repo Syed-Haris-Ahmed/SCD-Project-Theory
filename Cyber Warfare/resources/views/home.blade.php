@@ -18,8 +18,6 @@
             <button class="option-buttons">Option 4</button>
         </div>
         <div class="auth">
-            <a href="{{route("login")}}"><button class="sign-in-button">Sign in</button></a>
-            <button class="sign-up-button">Sign up</button>
           <a href="{{route('login')}}">  <button class="sign-in-button">Sign in</button></a>
           <a href="{{route('register')}}"> <button class="sign-up-button">Sign up</button></a>
         </div>
