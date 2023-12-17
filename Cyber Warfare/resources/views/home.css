@@ -131,9 +131,15 @@ body {
     height: 80%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    text-align: center; /* Center text horizontally */
 }
+
+.inner-div.block {
+    display: block;
+}
+
 
 .live-chat {
     width: 30%;
