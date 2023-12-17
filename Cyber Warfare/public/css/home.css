@@ -61,8 +61,8 @@ h1, h2, h3, li {
     left: 70px;
     font-family: sans-serif;
     color: white;
-    background-color: transparent;
-    border: solid 2px;
+    background: linear-gradient(#8118ef, #2955f3);
+    border: none;
     border-radius: 15px;
     width: 100px;
     height: 50px;
@@ -80,5 +80,9 @@ h1, h2, h3, li {
 }
 
 .sign-up-button:hover {
+    background: linear-gradient(#7716df, #244bd8);
+}
+
+.sign-in-button:hover {
     background: linear-gradient(#7716df, #244bd8);
 }
