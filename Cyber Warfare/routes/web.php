@@ -21,6 +21,10 @@ Route::get('/', function () {
     return redirect()->route('home');
 });
 
+Route::get('/dashboard', function () {
+    return view('BorderUser');
+});
+
 Route::get('/home', [HomeController::class,'index'])->name('home');
 
 Route::get('/login', [LoginController::class,'index'])->name('login');
