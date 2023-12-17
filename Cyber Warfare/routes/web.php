@@ -25,4 +25,4 @@ Route::get('/home', [HomeController::class,'index'])->name('home');
 Route::get('/login', [LoginController::class,'index'])->name('login');
 
 Route::get('/register', [RegisterController::class,'index'])->name('register');
-
+Route::post('/loginuser',[LoginController::class,'authentication'])->name('loginuser');

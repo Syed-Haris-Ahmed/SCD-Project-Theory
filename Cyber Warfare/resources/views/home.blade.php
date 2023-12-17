@@ -18,13 +18,10 @@
             <button class="option-buttons">Option 4</button>
         </div>
         <div class="auth">
-<<<<<<< HEAD
             <a href="{{route("login")}}"><button class="sign-in-button">Sign in</button></a>
             <button class="sign-up-button">Sign up</button>
-=======
           <a href="{{route('login')}}">  <button class="sign-in-button">Sign in</button></a>
           <a href="{{route('register')}}"> <button class="sign-up-button">Sign up</button></a>
->>>>>>> b6e568fea33bbf5de371057a4a69dcfe957ea6e9
         </div>
     </div>
 </body>
