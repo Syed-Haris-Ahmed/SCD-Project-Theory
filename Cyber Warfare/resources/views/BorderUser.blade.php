@@ -5,6 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{asset('css/BorderUser.css')}}">
     <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var liveChatOption = document.getElementById('liveChatOption');
+            var reportOption = document.getElementById('reportOption');
+
+            var liveChatButton = document.querySelector('.side-bar-option-div:nth-child(1) button');
+            var reportButton = document.querySelector('.side-bar-option-div:nth-child(2) button');
+
+            liveChatButton.addEventListener('click', function () {
+                liveChatOption.style.display = 'flex';
+                reportOption.style.display = 'none';
+            });
+
+            reportButton.addEventListener('click', function () {
+                liveChatOption.style.display = 'none';
+                reportOption.style.display = 'flex';
+            });
+        });
+    </script>    
 </head>
 <body>
     <div class="background">
@@ -35,7 +54,7 @@
                 </div>
             </div>
             <div class="main-option-container">
-                <div class="inner-div">
+                <div class="inner-div" id="liveChatOption">
                     <!-- <div class="inner-row">
                         <button class="live-chat" style="background-color: rgba(255, 0, 0, 0.4);">Live Chat 1</button>
                         <button class="live-chat" style="background-color: rgba(0, 0, 0, 0.4);">Live Chat 2</button>
@@ -46,6 +65,20 @@
                         <button class="live-chat" style="background-color: rgba(128, 128, 128, 0.4);">Live Chat 5</button>
                         <button class="live-chat" style="background-color: #7F2982;">Live Chat 6</button>
                     </div> -->
+                    <h1>Live Chat</h1>
+                </div>
+                <div class="inner-div" id="reportOption" style="display: none;">
+                    <!-- <div class="inner-row">
+                        <button class="live-chat" style="background-color: rgba(255, 0, 0, 0.4);">Live Chat 1</button>
+                        <button class="live-chat" style="background-color: rgba(0, 0, 0, 0.4);">Live Chat 2</button>
+                        <button class="live-chat" style="background-color: rgba(0, 255, 4, 0.4);">Live Chat 3</button>
+                    </div>
+                    <div class="inner-row" style="margin-top: 10px;">
+                        <button class="live-chat" style="background-color: rgba(8, 0, 255, 0.4);">Live Chat 4</button>
+                        <button class="live-chat" style="background-color: rgba(128, 128, 128, 0.4);">Live Chat 5</button>
+                        <button class="live-chat" style="background-color: #7F2982;">Live Chat 6</button>
+                    </div> -->
+                    <h1>Report</h1>
                 </div>
             </div>
         </div>
