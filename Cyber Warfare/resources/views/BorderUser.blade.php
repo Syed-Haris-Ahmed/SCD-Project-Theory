@@ -23,7 +23,7 @@
                 reportOption.style.display = 'flex';
             });
         });
-    </script>    
+    </script>  
 </head>
 <body>
     <div class="background">
