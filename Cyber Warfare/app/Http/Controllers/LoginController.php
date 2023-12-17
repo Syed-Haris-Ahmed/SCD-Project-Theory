@@ -23,8 +23,13 @@ class LoginController extends Controller
             if($user && $password == $user->password){
                 // Authentication successful
                 error_log("Authentication successful");
+                // error_log($user->roleid);
                 $request->session()->put('username', $user->username);
-                return redirect()->route('home');
+                if($user->roleid == 2){
+                    return redirect()->route('BorderUser');
+                } else {
+                    return redirect()->route('home');
+                }
             } else {
                 // Authentication failed
                 error_log("Authentication failed");
