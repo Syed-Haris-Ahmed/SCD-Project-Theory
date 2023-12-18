@@ -5,7 +5,10 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BorderController;
-
+use App\Events\message;
+use App\Http\Controllers\MessageController;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,6 +39,10 @@ Route::get('/register', [RegisterController::class,'index'])->name('register');
 Route::post('/register',[RegisterController::class,'authentication'])->name('reguser');
 
 Route::get('/BorderResident', [BorderController::class,'index'])->name('BorderUser');
+
+Route::get('/send-message', [MessageController::class,'index']);
+
+Route::post('/send-message', [MessageController::class,'post'])->name('message');
 
 
 

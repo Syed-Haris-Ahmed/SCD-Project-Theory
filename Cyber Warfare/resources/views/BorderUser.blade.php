@@ -6,6 +6,10 @@
 
     <link rel="stylesheet" href="{{asset('css/BorderUser.css')}}">
 
+    <script src="{{ asset('node_modules/laravel-echo/dist/echo.js') }}"></script>
+    <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
+
+
     <title>Document</title>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -25,7 +29,7 @@
                 reportOption.style.display = 'flex';
             });
         });
-    </script>  
+    </script>
 </head>
 <body>
     <div class="background">
