@@ -8,6 +8,7 @@
 
     <title>Document</title>
     <script>
+        let buttonClicked = "";
         document.addEventListener('DOMContentLoaded', function () {
             var liveChatOption = document.getElementById('liveChatOption');
             var reportOption = document.getElementById('reportOption');
@@ -16,13 +17,23 @@
             var reportButton = document.querySelector('.side-bar-option-div:nth-child(2) button');
 
             liveChatButton.addEventListener('click', function () {
+                if (buttonClicked == "live") {
+                    return;
+                }
+                buttonClicked = "live";
                 liveChatOption.style.display = 'flex';
                 reportOption.style.display = 'none';
+                alert("Clicked Live");
             });
 
             reportButton.addEventListener('click', function () {
+                if (buttonClicked == "report") {
+                    return;
+                }
+                buttonClicked = "report";
                 liveChatOption.style.display = 'none';
                 reportOption.style.display = 'flex';
+                alert("Clicked Report");
             });
         });
     </script>  
