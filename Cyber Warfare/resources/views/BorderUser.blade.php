@@ -54,7 +54,7 @@
                 <div class="details">
 
                     <img src="{{ asset('res/profile_icon.png') }}" alt="Profile Icon" width="50px" height="50px">
-                    <h4 style="margin-left: 15px; margin-right: 15px;">Syed Haris Ahmed<br><span style="color: lime; ">Border Resident</span></h4>
+                    <h4 style="margin-left: 15px; margin-right: 15px;">{{$user->username}}<br><span style="color: lime; ">Border Resident</span></h4>
                     <img src="{{ asset('res/drop_down_icon.png') }}" alt="DrownDropIcon" width="40px" height="40px">
 
                 </div>

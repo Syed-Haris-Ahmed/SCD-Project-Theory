@@ -70,6 +70,12 @@
     </style>
 </head>
 <body>
+    <header>
+
+        <a href="{{ route('BorderUser') }}" style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 5px; border: 1px solid #007bff;">Dashboard</a>
+
+
+    </header>
 
     <!-- Chat messages container -->
     <div id="chat-messages">
