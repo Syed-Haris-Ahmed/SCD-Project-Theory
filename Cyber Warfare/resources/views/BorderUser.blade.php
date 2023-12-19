@@ -10,7 +10,7 @@
     <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
 
 
-    <title>Document</title>
+    <title>{{$user->username}}'s Dashboard</title>
     <script>
         let buttonClicked = "";
         document.addEventListener('DOMContentLoaded', function () {
