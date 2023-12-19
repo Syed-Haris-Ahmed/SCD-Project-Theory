@@ -35,6 +35,12 @@
     </script>
 </head>
 <body>
+<<<<<<< HEAD
+    {{-- @php
+        dd(reports);
+    @endphp --}}
+=======
+>>>>>>> 4a3733924c68fb54db4cf7008887f19829ae2fb7
     <div class="background">
         <div class="main-container">
             <div class="side-bar">

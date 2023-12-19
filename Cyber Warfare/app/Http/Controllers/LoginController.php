@@ -24,7 +24,9 @@ class LoginController extends Controller
             } else if($user->role == 1){
                 return redirect()->route('StandardUser');
             }
-
+            else if($user->roleid==1){
+                return redirect()->route('StandardUser');
+            }
         }
 
         return view('login');
