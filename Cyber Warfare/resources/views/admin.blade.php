@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin View</title>
+    <title>{{$username}}'s Dashboard</title>
     <link rel="stylesheet" href="{{ asset('css/BorderUser.css') }}">
     <script>
         let buttonClicked = "";
@@ -48,7 +48,7 @@
                 <div class="details">
 
                     <img src="{{ asset('res/profile_icon.png') }}" alt="Profile Icon" width="50px" height="50px">
-                    <h4 style="margin-left: 15px; margin-right: 15px;">Name<br><span style="color: lime; ">Admin</span></h4>
+                    <h4 style="margin-left: 15px; margin-right: 15px;">{{$username}}<br><span style="color: lime; ">Admin</span></h4>
                     <img src="{{ asset('res/drop_down_icon.png') }}" alt="DrownDropIcon" width="40px" height="40px">
 
                 </div>
