@@ -36,7 +36,7 @@ Route::post('/login',[LoginController::class,'authentication'])->name('loginuser
 
 Route::get('/register', [RegisterController::class,'index'])->name('register');
 
-Route::post('/register',[RegisterController::class,'authentication'])->name('reguser');
+Route::post('/register',[RegisterController::class,'storeData'])->name('reguser');
 
 Route::get('/BorderResident', [BorderController::class,'index'])->name('BorderUser');
 

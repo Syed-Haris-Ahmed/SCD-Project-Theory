@@ -63,10 +63,13 @@
                         <button class="side-bar-option-button">Live Chat</button>
                     </div>
                     <div class="side-bar-option-div">
-                        <button id="report" class="side-bar-option-button" @if($user->report) disabled @endif>
-                            <a href="{{ route('report') }}">Report Invasion</a>
-                        </button>
+                        <a href="{{ route('report') }}">
+                            <button id="report" class="side-bar-option-button" @if($user->report) disabled @endif>
+                                Report Invasion
+                            </button>
+                        </a>
                     </div>
+                    
                     <!-- <div class="side-bar-option-div">
                         <button class="side-bar-option-button">Option 3</button>
                     </div> -->
