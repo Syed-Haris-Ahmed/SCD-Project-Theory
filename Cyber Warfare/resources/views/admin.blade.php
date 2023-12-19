@@ -21,8 +21,6 @@
                 buttonClicked = "live";
                 liveChatOption.style.display = 'flex';
                 reportOption.style.display = 'none';
-                // alert("Clicked Live");
-                window.location.href = '/chat'; 
             });
 
             reportButton.addEventListener('click', function () {
@@ -32,16 +30,11 @@
                 buttonClicked = "report";
                 liveChatOption.style.display = 'none';
                 reportOption.style.display = 'flex';
-                // alert("Clicked Report");
-                reportButton.disabled =  true;
             });
         });
     </script>
 </head>
 <body>
-    @php
-        dd($reports);
-    @endphp
     <div class="background">
         <div class="main-container">
             <div class="side-bar">
@@ -58,11 +51,9 @@
                         <button class="side-bar-option-button">Activate Live Chat</button>
                     </div>
                     <div class="side-bar-option-div">
-                        <a href="{{ route('report') }}">
-                            <button id="report" class="side-bar-option-button">
-                                Show Reports
-                            </button>
-                        </a>
+                        <button id="report" class="side-bar-option-button">
+                            Show Reports
+                        </button>
                     </div>
                 </div>
                 <div class="log-out-div">
@@ -80,7 +71,13 @@
                     </div>
                 </div>
                 <div class="inner-div" id="reportOption" style="display: none;">
-                    <h1>Show Reports</h1>
+                    <h1>Reports</h1>
+                    <div>
+                    @foreach($reports as $report)
+                        <h2>Title: {{ $report['title'] }}</h2>
+                        <h3>Description: {{ $report['description'] }}</h3>
+                    @endforeach
+                    </div>
                 </div>
             </div>
         </div>
