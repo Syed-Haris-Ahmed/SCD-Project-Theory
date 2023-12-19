@@ -77,22 +77,39 @@
 
     </header>
 
+    <h1 style="text-align: center"> LIVE CHAT </h1>
+
     <!-- Chat messages container -->
     <div id="chat-messages">
         <!-- Existing messages will be loaded here -->
         @foreach($chatHistory as $message)
+            @if(!empty($message->content))
+                
             <div class="message">
                 <strong>{{ $message->username }}:</strong> {{ $message->content }}
             </div>
+            
+            @endif
             <!-- Access other attributes of the $message model as needed -->
         @endforeach 
     </div>
 
     <!-- Form for sending messages -->
-    <form id="message-form">
+    <form id="message-form" onsubmit="return validate()">
         <input type="text" id="message-input" placeholder="Type your message...">
         <button type="submit">Send</button>
     </form>
+
+    <script>
+        function validate(){
+        let msg = document.getElementById('message-input').value;
+        if(msg == ''){
+            alert('Please type something in the message bar');
+            return false;
+        }
+        return true;
+    }
+        </script>
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

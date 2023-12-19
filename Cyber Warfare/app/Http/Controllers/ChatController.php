@@ -23,6 +23,11 @@ class ChatController extends Controller
 
     public function sendMessage(Request $request)
     {
+
+        $messageContent = $request->input('message');
+    if (empty($messageContent)) {
+        return response()->json(['success' => false, 'error' => 'Message content is empty']);
+    }
         // Save message to the database
         $newMessage = new Message();
         $newMessage->content = $request->input('message');
