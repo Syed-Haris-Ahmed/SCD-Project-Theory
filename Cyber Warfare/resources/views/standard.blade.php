@@ -69,7 +69,7 @@
                 </div>
                 <div class="side-bar-options-container">
                     <div class="side-bar-option-div">
-                        <button id="liveChatButton" class="side-bar-option-button">Live Chat</button>
+                        <a href="{{route('displayChat')}}"> <button id="liveChatButton" class="side-bar-option-button">Live Chat</button> </a>
                     </div>
                     
                     <!-- <div class="side-bar-option-div">
