@@ -9,6 +9,7 @@ use App\Events\message;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 /*
@@ -53,5 +54,7 @@ Route::get('/report', [BorderController::class,'report'])->name('report');
 Route::get('/contact-us', [contactController::class,'index'])->name('contact');
 
 Route::get('/about-us', [AboutController::class,'index'])->name('about');
+
+Route::get('/admin', [AdminController::class,'index'])->name('admin');
 
 

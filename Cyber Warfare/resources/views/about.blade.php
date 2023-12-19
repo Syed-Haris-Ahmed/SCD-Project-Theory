@@ -55,7 +55,7 @@ main {
     margin-bottom: 10px;
 }
    
-    </style>
+</style>
 </head>
 
 <body>

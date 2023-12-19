@@ -46,7 +46,10 @@ class LoginController extends Controller
                 session(['username' => $user->username]);
                 if($user->roleid == 2){
                     return redirect()->route('BorderUser');
-                } else {
+                }else if($user->roleid == 3){
+                    
+                    return redirect()->route('admin');
+                }else {
                     return redirect()->route('home');
                 }
             } else {
