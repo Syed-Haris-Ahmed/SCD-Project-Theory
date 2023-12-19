@@ -7,6 +7,7 @@ const message_form = document.getElementById('message_form');
 
 message_form.addEventListener('submit',function(e){
 e.preventDefault(); 
+
 console.log('form submitted');
 let has_errors = false;
 

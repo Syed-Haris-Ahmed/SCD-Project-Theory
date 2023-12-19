@@ -40,9 +40,9 @@ window.Echo.channel('chat')
 //     console.log(e);
 // });
 
-window.Echo.channel('chat').listen('.message', (e) => {
-    message_el.classList.add('message')
-    message_el.textContent = e.message; // Assuming e.message contains the message text
+// window.Echo.channel('chat').listen('.message', (e) => {
+//     message_el.classList.add('message')
+//     message_el.textContent = e.message; // Assuming e.message contains the message text
 
-    message_el.appendChild(message_el);
-});
+//     message_el.appendChild(message_el);
+// });

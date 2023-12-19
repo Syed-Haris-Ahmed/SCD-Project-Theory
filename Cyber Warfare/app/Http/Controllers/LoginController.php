@@ -24,6 +24,9 @@ class LoginController extends Controller
                 // Authentication successful
                 error_log("Authentication successful");
                 // error_log($user->roleid);
+
+                // Using the session() helper
+                session(['userid' => $user->userid]);
                 $request->session()->put('username', $user->username);
                 if($user->roleid == 2){
                     return redirect()->route('BorderUser');
