@@ -76,7 +76,7 @@
         <!-- Existing messages will be loaded here -->
         @foreach($chatHistory as $message)
             <div class="message">
-                <strong>{{ $username }}:</strong> {{ $message->content }}
+                <strong>{{ $message->username }}:</strong> {{ $message->content }}
             </div>
             <!-- Access other attributes of the $message model as needed -->
         @endforeach 
