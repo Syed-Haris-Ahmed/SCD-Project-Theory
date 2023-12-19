@@ -3,102 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Chat</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f7f7f7;
-        }
-        
-        #chat-messages {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            overflow-y: auto;
-            max-height: 400px;
-        }
-        
-        .message {
-            padding: 8px;
-            margin-bottom: 10px;
-            background-color: #f2f2f2;
-            border-radius: 5px;
-        }
-        
-        .message strong {
-            font-weight: bold;
-            color: #333;
-        }
-        
-        #message-form {
-            margin-top: 20px;
-            display: flex;
-        }
-        
-        #message-input {
-            flex: 1;
-            padding: 8px;
-            margin-right: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            transition: border-color 0.3s;
-        }
-        
-        #message-input:focus {
-            outline: none;
-            border-color: dodgerblue;
-        }
-        
-        button[type="submit"] {
-            padding: 8px 15px;
-            border-radius: 5px;
-            border: none;
-            background-color: dodgerblue;
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        button[type="submit"]:hover {
-            background-color: #007bff;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset('css/chat.css') }}">
 </head>
 <body>
-    <header>
+    
+    <div class="background">
+        <div class="main-container">
+            <a href="{{ route('BorderUser') }}" style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 5px; border: 1px solid #007bff;">Dashboard</a>
+            <div class="live-chat-div">
+                <h1 style="text-align: center; color: white;"> LIVE CHAT </h1>
 
-        <a href="{{ route('BorderUser') }}" style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 5px; border: 1px solid #007bff;">Dashboard</a>
+                <!-- Chat messages container -->
+                <div id="chat-messages">
+                    <!-- Existing messages will be loaded here -->
+                    @foreach($chatHistory as $message)
+                        @if(!empty($message->content))
+                            
+                        <div class="message">
+                            <strong style="color: #d1d1d1;">{{ $message->username }}:</strong> <span style="color: white;">{{ $message->content }}</span>
+                        </div>
+                        
+                        @endif
+                        <!-- Access other attributes of the $message model as needed -->
+                    @endforeach 
+                </div>
 
-
-    </header>
-
-    <h1 style="text-align: center"> LIVE CHAT </h1>
-
-    <!-- Chat messages container -->
-    <div id="chat-messages">
-        <!-- Existing messages will be loaded here -->
-        @foreach($chatHistory as $message)
-            @if(!empty($message->content))
-                
-            <div class="message">
-                <strong>{{ $message->username }}:</strong> {{ $message->content }}
+                <!-- Form for sending messages -->
+                <div class="message-body-container">
+                    <form id="message-form" onsubmit="return validate()">
+                        <input type="text" id="message-input" placeholder="Type your message...">
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
             </div>
-            
-            @endif
-            <!-- Access other attributes of the $message model as needed -->
-        @endforeach 
+        </div>
     </div>
-
-    <!-- Form for sending messages -->
-    <form id="message-form" onsubmit="return validate()">
-        <input type="text" id="message-input" placeholder="Type your message...">
-        <button type="submit">Send</button>
-    </form>
 
     <script>
         function validate(){

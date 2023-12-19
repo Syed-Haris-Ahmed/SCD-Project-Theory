@@ -105,6 +105,7 @@ body {
     height: 10%;
     display: flex;
     justify-content: center;
+    align-items: center;
     border-radius: 15px;
 }
 
@@ -156,4 +157,18 @@ body {
 .inner-row {
     width: 80%;
     height: 40%;
+}
+
+.live-chat-activation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.live-chat-buttons {
+    padding: 10px;
+    font-size: 30px;
+    background-color: rgba(150, 150, 150, 0.3);
+    border: none;
+    border-radius: 8px;
 }

@@ -7,81 +7,83 @@
     <title>Register</title>
 </head>
 <body>
-<form method="POST" action="{{ route('reguser') }}">
-    @csrf
+    <div class="background">
+        <form method="POST" action="{{ route('reguser') }}">
+        @csrf
 
-    
-    <div>
-        <label for="username">Username</label>
-        <input type="text" name="username" id="username" required>
+        
+            <div>
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" required>
+            </div>
+
+            
+            <div>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+
+            
+            <div>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+
+            <div>
+                <label for="cnic">CNIC Number</label>
+                <input type="text" id="cnic" name="cnic" pattern="[0-9]{13}" maxlength="13" placeholder="Enter 13-digit CNIC" required>
+            </div>
+
+            
+            <div>
+                <label>
+                    <input type="checkbox" name="border_resident" id="border_resident">
+                    Are you a Border Resident?
+                </label>
+            </div>
+
+            <!-- Dropdown for locations (will be hidden initially) -->
+            <div id="locationDropdown" style="display: none;">
+                <label for="locations">Select Location</label>
+                <select name="locations" id="locations">
+                    <!-- Your options here -->
+                    <option value="Wagah">Wagah, Punjab</option>
+                    <option value="Chachro">Chachro, Sindh</option>
+                    <option value="Mithi">Mithi, Sindh</option>
+                    <option value="Islamkot">Islamkot, Sindh</option>
+                    <option value="Taftan">Taftan, Balochistan</option>
+                    <option value="Chaman">Chaman, Balochistan</option>
+                    <option value="Kasur">Kasur, Punjab</option>
+                    <option value="Narowal">Narowal, Punjab</option>
+                    <option value="Sialkot">Sialkot, Punjab</option>
+                    <option value="Gilgit">Gilgit, Gilgit-Baltistan</option>
+                    <option value="Skardu">Skardu, Gilgit-Baltistan</option>
+                    <option value="Chachro">Chachro, Sindh</option>
+                    <option value="Torkham">Torkham, Khyber Pakhtunkhwa</option>
+                    <option value="Gwadar">Gwadar, Balochistan</option>
+                    <option value="Parachinar">Parachinar, Khyber Pakhtunkhwa</option>
+                    <option value="Ormara">Ormara, Balochistan</option>
+                    <option value="Mastung">Mastung, Balochistan</option>
+                    <option value="Dalbandin">Dalbandin, Balochistan</option>
+                    <option value="Rawalkot">Rawalkot, Azad Jammu and Kashmir</option>
+                    <option value="Turbat">Turbat, Balochistan</option>
+                    <!-- Add more options as needed -->
+                </select>
+            </div>
+
+            <!-- JavaScript to show/hide location dropdown based on checkbox -->
+            <script>
+                document.getElementById('border_resident').addEventListener('change', function () {
+                    var dropdown = document.getElementById('locationDropdown');
+                    dropdown.style.display = this.checked ? 'block' : 'none';
+                });
+            </script>
+
+            <!-- Submit Button -->
+            <div>
+                <button type="submit">Register</button>
+            </div>
+        </form>
     </div>
-
-    
-    <div>
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" required>
-    </div>
-
-    
-    <div>
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" required>
-    </div>
-
-    <div>
-        <label for="cnic">CNIC Number</label>
-        <input type="text" id="cnic" name="cnic" pattern="[0-9]{13}" maxlength="13" placeholder="Enter 13-digit CNIC" required>
-    </div>
-
-    
-    <div>
-        <label>
-            <input type="checkbox" name="border_resident" id="border_resident">
-            Are you a Border Resident?
-        </label>
-    </div>
-
-    <!-- Dropdown for locations (will be hidden initially) -->
-    <div id="locationDropdown" style="display: none;">
-        <label for="locations">Select Location</label>
-        <select name="locations" id="locations">
-            <!-- Your options here -->
-            <option value="Wagah">Wagah, Punjab</option>
-            <option value="Chachro">Chachro, Sindh</option>
-            <option value="Mithi">Mithi, Sindh</option>
-            <option value="Islamkot">Islamkot, Sindh</option>
-            <option value="Taftan">Taftan, Balochistan</option>
-            <option value="Chaman">Chaman, Balochistan</option>
-            <option value="Kasur">Kasur, Punjab</option>
-            <option value="Narowal">Narowal, Punjab</option>
-            <option value="Sialkot">Sialkot, Punjab</option>
-            <option value="Gilgit">Gilgit, Gilgit-Baltistan</option>
-            <option value="Skardu">Skardu, Gilgit-Baltistan</option>
-            <option value="Chachro">Chachro, Sindh</option>
-            <option value="Torkham">Torkham, Khyber Pakhtunkhwa</option>
-            <option value="Gwadar">Gwadar, Balochistan</option>
-            <option value="Parachinar">Parachinar, Khyber Pakhtunkhwa</option>
-            <option value="Ormara">Ormara, Balochistan</option>
-            <option value="Mastung">Mastung, Balochistan</option>
-            <option value="Dalbandin">Dalbandin, Balochistan</option>
-            <option value="Rawalkot">Rawalkot, Azad Jammu and Kashmir</option>
-            <option value="Turbat">Turbat, Balochistan</option>
-            <!-- Add more options as needed -->
-        </select>
-    </div>
-
-    <!-- JavaScript to show/hide location dropdown based on checkbox -->
-    <script>
-        document.getElementById('border_resident').addEventListener('change', function () {
-            var dropdown = document.getElementById('locationDropdown');
-            dropdown.style.display = this.checked ? 'block' : 'none';
-        });
-    </script>
-
-    <!-- Submit Button -->
-    <div>
-        <button type="submit">Register</button>
-    </div>
-</form>
 </body>
 </html>
