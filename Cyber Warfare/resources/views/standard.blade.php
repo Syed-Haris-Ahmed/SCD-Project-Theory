@@ -101,7 +101,7 @@
                     </div>
                 </div>
                 <div class="inner-div" id="profileOption" style="display: none;">
-                    <form method="POST">
+                    <form method="POST" onsubmit="return validateForm()">
                     @csrf
                         <div>
                             <label for="username">Username</label>
@@ -128,6 +128,25 @@
             </div>
         </div>
     </div>
+    <script>
+        function validateForm() {
+            // Get form inputs
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+    
+            // Regular expression for email validation
+    
+            // Validation checks
+            if (!username || !email || !password) {
+                alert('All fields are required');
+                return false;
+            }
+    
+            // If all validations pass, the form will submit
+            return true;
+        }
+    </script>
 </body>
 </body>
 </html>
