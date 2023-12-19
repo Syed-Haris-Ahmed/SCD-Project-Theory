@@ -9,13 +9,12 @@
 <body class="body">
     <div class="top-bar">
         <div>
-            <h1>Logo</h1>
+            <a href="{{route('contact')}}">  <button class="sign-in-button">Contact us</button></a>
+            <a href="{{route('about')}}">  <button class="sign-in-button">About us</button></a>
         </div>
         <div class="options">
             <button class="option-buttons">Option 1</button>
             <button class="option-buttons">Option 2</button>
-            <button class="option-buttons">Option 3</button>
-            <button class="option-buttons">Option 4</button>
         </div>
         <div class="auth">
           <a href="{{route('login')}}">  <button class="sign-in-button">Sign in</button></a>

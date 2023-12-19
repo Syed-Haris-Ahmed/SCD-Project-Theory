@@ -7,6 +7,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BorderController;
 use App\Events\message;
 use App\Http\Controllers\ChatController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\AboutController;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 /*
@@ -47,5 +49,9 @@ Route::post('/chat', [ChatController::class,'sendMessage'])->name('message');
 Route::get('/logout', [LoginController::class,'logout'])->name('logout');
 
 Route::get('/report', [BorderController::class,'report'])->name('report');
+
+Route::get('/contact-us', [contactController::class,'index'])->name('contact');
+
+Route::get('/about-us', [AboutController::class,'index'])->name('about');
 
 
