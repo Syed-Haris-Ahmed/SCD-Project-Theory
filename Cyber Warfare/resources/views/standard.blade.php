@@ -63,7 +63,7 @@
                 <div class="details">
 
                     <img src="{{ asset('res/profile_icon.png') }}" alt="Profile Icon" width="50px" height="50px">
-                    <h4 style="margin-left: 15px; margin-right: 15px;">Name<br><span style="color: lime; ">Standard User</span></h4>
+                    <h4 style="margin-left: 15px; margin-right: 15px;">{{$username}}<br><span style="color: lime; ">Standard User</span></h4>
                     <button id="profileButton" style="background-color: transparent; border: none"><img src="{{ asset('res/drop_down_icon.png') }}" alt="DrownDropIcon" width="40px" height="40px"></button>
 
                 </div>
