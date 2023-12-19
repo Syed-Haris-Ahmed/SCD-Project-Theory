@@ -38,7 +38,8 @@
                 buttonClicked = "report";
                 liveChatOption.style.display = 'none';
                 reportOption.style.display = 'flex';
-                alert("Clicked Report");
+                // alert("Clicked Report");
+                reportButton.disabled =  true;
             });
         });
     </script>
@@ -62,7 +63,9 @@
                         <button class="side-bar-option-button">Live Chat</button>
                     </div>
                     <div class="side-bar-option-div">
-                        <button class="side-bar-option-button">Report Invasion</button>
+                        <button id="report" class="side-bar-option-button">
+                            <a href="{{ route('report') }}">Report Invasion</a>
+                        </button>
                     </div>
                     <!-- <div class="side-bar-option-div">
                         <button class="side-bar-option-button">Option 3</button>

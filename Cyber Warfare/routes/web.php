@@ -46,4 +46,6 @@ Route::post('/chat', [ChatController::class,'sendMessage'])->name('message');
 
 Route::get('/logout', [LoginController::class,'logout'])->name('logout');
 
+Route::get('/report', [BorderController::class,'report'])->name('report');
+
 
