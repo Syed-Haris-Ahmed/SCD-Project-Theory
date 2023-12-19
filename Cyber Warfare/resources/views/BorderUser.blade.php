@@ -27,7 +27,8 @@
                 buttonClicked = "live";
                 liveChatOption.style.display = 'flex';
                 reportOption.style.display = 'none';
-                alert("Clicked Live");
+                // alert("Clicked Live");
+                window.location.href = '/chat';
             });
 
             reportButton.addEventListener('click', function () {

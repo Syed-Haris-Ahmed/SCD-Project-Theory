@@ -40,7 +40,7 @@ Route::post('/register',[RegisterController::class,'authentication'])->name('reg
 
 Route::get('/BorderResident', [BorderController::class,'index'])->name('BorderUser');
 
-Route::get('/chat', [ChatController::class,'index']);
+Route::get('/chat', [ChatController::class,'index'])->name('displayChat');
 
 Route::post('/chat', [ChatController::class,'sendMessage'])->name('message');
 
