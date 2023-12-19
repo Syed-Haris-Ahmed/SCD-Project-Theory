@@ -20,7 +20,9 @@ class LoginController extends Controller
 
                 return redirect()->route('BorderUser');
             }
-
+            else if($user->roleid==1){
+                return redirect()->route('StandardUser');
+            }
         }
 
         return view('login');

@@ -12,6 +12,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use App\Http\Controllers\StandardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,6 +43,7 @@ Route::get('/register', [RegisterController::class,'index'])->name('register');
 Route::post('/register',[RegisterController::class,'storeData'])->name('reguser');
 
 Route::get('/BorderResident', [BorderController::class,'index'])->name('BorderUser');
+Route::get('/RegularUser',[StandardController::class,'index'])->name('StandardUser');
 
 Route::get('/chat', [ChatController::class,'index'])->name('displayChat');
 

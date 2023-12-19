@@ -39,9 +39,9 @@
     </script>
 </head>
 <body>
-    @php
-        dd($reports);
-    @endphp
+    {{-- @php
+        dd(reports);
+    @endphp --}}
     <div class="background">
         <div class="main-container">
             <div class="side-bar">
