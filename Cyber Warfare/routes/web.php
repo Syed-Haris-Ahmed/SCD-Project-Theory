@@ -27,8 +27,8 @@ Route::get('/', function () {
     return redirect()->route('home');
 });
 
-Route::get('/dashboard', function () {
-    return view('BorderUser');
+Route::get('/standarduser', function() {
+    return view('standard'); 
 });
 
 Route::get('/home', [HomeController::class,'index'])->name('home');

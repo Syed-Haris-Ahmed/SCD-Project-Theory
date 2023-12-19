@@ -3,16 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="{{asset('css/BorderUser.css')}}">
-
-    <script src="{{ asset('node_modules/laravel-echo/dist/echo.js') }}"></script>
-    <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
-
-
-    <title>{{$user->username}}'s Dashboard</title>
+    <title>Standard User</title>
+    <link rel="stylesheet" href="{{ asset('css/BorderUser.css') }}">
     <script>
-        let buttonClicked = "";
+        let buttonClicked = "live";
         document.addEventListener('DOMContentLoaded', function () {
             var liveChatOption = document.getElementById('liveChatOption');
             var reportOption = document.getElementById('reportOption');
@@ -23,6 +17,7 @@
             var profileButton = document.getElementById('profileButton');
 
             liveChatButton.addEventListener('click', function () {
+                console.log(buttonClicked);
                 if (buttonClicked == "live") {
                     return;
                 }
@@ -35,6 +30,7 @@
             });
 
             reportButton.addEventListener('click', function () {
+                console.log(buttonClicked);
                 if (buttonClicked == "report") {
                     return;
                 }
@@ -46,7 +42,7 @@
 
             profileButton.addEventListener('click', function () {
                 console.log(buttonClicked);
-                if (buttonClicked == "report") {
+                if (buttonClicked == "profile") {
                     return;
                 }
                 buttonClicked = "profile";
@@ -67,16 +63,13 @@
                 <div class="details">
 
                     <img src="{{ asset('res/profile_icon.png') }}" alt="Profile Icon" width="50px" height="50px">
-                    <h4 style="margin-left: 15px; margin-right: 15px;">{{$user->username}}<br><span style="color: lime; ">Border Resident</span></h4>
+                    <h4 style="margin-left: 15px; margin-right: 15px;">Name<br><span style="color: lime; ">Standard User</span></h4>
                     <button id="profileButton" style="background-color: transparent; border: none"><img src="{{ asset('res/drop_down_icon.png') }}" alt="DrownDropIcon" width="40px" height="40px"></button>
 
                 </div>
                 <div class="side-bar-options-container">
                     <div class="side-bar-option-div">
-                    <button id="liveChatButton" class="side-bar-option-button">Live Chat</button>
-                    </div>
-                    <div class="side-bar-option-div">
-                        <button id="reportButton" class="side-bar-option-button">Report</button>
+                        <button id="liveChatButton" class="side-bar-option-button">Live Chat</button>
                     </div>
                     
                     <!-- <div class="side-bar-option-div">
@@ -103,37 +96,9 @@
                         <button class="live-chat" style="background-color: rgba(128, 128, 128, 0.4);">Live Chat 5</button>
                         <button class="live-chat" style="background-color: #7F2982;">Live Chat 6</button>
                     </div> -->
-                    <h1>Live Chat</h1>
-                </div>
-                <div class="inner-div" id="reportOption" style="display: none;">
-                    <!-- <div class="inner-row">
-                        <button class="live-chat" style="background-color: rgba(255, 0, 0, 0.4);">Live Chat 1</button>
-                        <button class="live-chat" style="background-color: rgba(0, 0, 0, 0.4);">Live Chat 2</button>
-                        <button class="live-chat" style="background-color: rgba(0, 255, 4, 0.4);">Live Chat 3</button>
+                    <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                        <h1>Live Chat</h1>
                     </div>
-                    <div class="inner-row" style="margin-top: 10px;">
-                        <button class="live-chat" style="background-color: rgba(8, 0, 255, 0.4);">Live Chat 4</button>
-                        <button class="live-chat" style="background-color: rgba(128, 128, 128, 0.4);">Live Chat 5</button>
-                        <button class="live-chat" style="background-color: #7F2982;">Live Chat 6</button>
-                    </div> -->
-                    <h1>Report</h1>
-                    <form method="POST">
-                    @csrf
-                        <div>
-                            <label for="title">Title</label>
-                            <input type="text" name="title" id="title" required>
-                        </div>
-
-                        
-                        <div>
-                            <label for="description">Description</label>
-                            <input type="text" name="description" id="description" required>
-                        </div>
-
-                        <div>
-                            <button type="submit">Submit Report</button>
-                        </div>
-                    </form>
                 </div>
                 <div class="inner-div" id="profileOption" style="display: none;">
                     <form method="POST">
@@ -163,5 +128,6 @@
             </div>
         </div>
     </div>
+</body>
 </body>
 </html>

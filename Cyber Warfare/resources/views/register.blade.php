@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="background">
-        <form method="POST" action="{{ route('reguser') }}">
+        <form method="POST" action="{{ route('reguser') }}" onsubmit="return validateForm()">
         @csrf
 
         
@@ -70,6 +70,40 @@
                     <!-- Add more options as needed -->
                 </select>
             </div>
+            <script>
+                function validateForm() {
+                    const username = document.getElementById('username').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const password = document.getElementById('password').value.trim();
+                    const cnic = document.getElementById('cnic').value.trim();
+            
+                    // Validate Username
+                    if (username === '') {
+                        alert('Please enter a username');
+                        return false;
+                    }
+            
+                    // Validate Email
+                    if (!validateEmail(email)) {
+                        alert('Please enter a valid email address');
+                        return false;
+                    }
+            
+                    // Validate Password
+                    if (password === '') {
+                        alert('Please enter a password');
+                        return false;
+                    }
+            
+                    // Validate CNIC
+                    if (cnic.length !== 13 || isNaN(cnic)) {
+                        alert('Please enter a valid 13-digit CNIC number');
+                        return false;
+                    }
+            
+                    return true; // Form will submit if all validations pass
+                }
+                </script>
 
             <!-- JavaScript to show/hide location dropdown based on checkbox -->
             <script>

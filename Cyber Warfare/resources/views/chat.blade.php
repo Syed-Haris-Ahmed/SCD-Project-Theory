@@ -69,7 +69,7 @@
                     success: function(response) {
                         // Handle successful message submission
                         // Append the new message to the chat interface
-                        $('#chat-messages').append('<div class="message"><strong>{{ $username }}:</strong> ' + message + '</div>');
+                        $('#chat-messages').append('<div class="message"><strong style="color: #d1d1d1;">{{ $username }}:</strong> <span style="color: white;">'+ message +'</span> </div>');
                         $('#message-input').val(''); // Clear input field
                     },
                     error: function(error) {
