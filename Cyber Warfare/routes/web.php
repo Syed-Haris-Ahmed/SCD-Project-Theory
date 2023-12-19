@@ -44,4 +44,6 @@ Route::get('/chat', [ChatController::class,'index'])->name('displayChat');
 
 Route::post('/chat', [ChatController::class,'sendMessage'])->name('message');
 
+Route::get('/logout', [LoginController::class,'logout'])->name('logout');
+
 

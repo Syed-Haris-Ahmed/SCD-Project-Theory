@@ -28,7 +28,7 @@
                 liveChatOption.style.display = 'flex';
                 reportOption.style.display = 'none';
                 // alert("Clicked Live");
-                window.location.href = '/chat';
+                window.location.href = '/chat'; 
             });
 
             reportButton.addEventListener('click', function () {
@@ -62,7 +62,7 @@
                         <button class="side-bar-option-button">Live Chat</button>
                     </div>
                     <div class="side-bar-option-div">
-                        <button class="side-bar-option-button">Report</button>
+                        <button class="side-bar-option-button">Report Invasion</button>
                     </div>
                     <!-- <div class="side-bar-option-div">
                         <button class="side-bar-option-button">Option 3</button>
@@ -70,9 +70,9 @@
                 </div>
                 <div class="log-out-div">
 
-                    <img src="{{ asset('res/logout_icon.png') }}" alt="Logout_Icon" width="50px" height="50px">
+                    <img src="{{ asset('res/logout_icon.png') }}" alt="Logout_Icon" width="50px" height="50px"> 
 
-                    <h1 style="margin-left: 20px;">Logout</h1>
+                    <a href="{{route('logout')}}">Log Out </a>
                 </div>
             </div>
             <div class="main-option-container">

@@ -4,10 +4,25 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
     public function index(){
+
+        $session = session('login');
+
+        if($session){
+            $username = session('username');
+            $user = User::where('username', $username)->first();
+
+            if($user->roleid == 2){
+
+                return redirect()->route('BorderUser');
+            }
+
+        }
+
         return view('login');
     }
     public function authentication(Request $request){
@@ -24,10 +39,11 @@ class LoginController extends Controller
                 // Authentication successful
                 error_log("Authentication successful");
                 // error_log($user->roleid);
-
+                session(['login' => true]);
                 // Using the session() helper
                 session(['userid' => $user->userid]);
-                $request->session()->put('username', $user->username);
+                // $request->session()->put('username', $user->username);
+                session(['username' => $user->username]);
                 if($user->roleid == 2){
                     return redirect()->route('BorderUser');
                 } else {
@@ -42,6 +58,22 @@ class LoginController extends Controller
         }
     
         return redirect()->route('login');
+    }
+
+    public function logout(){
+
+        // session()->forget('userid');
+        // session()->forget('username');
+        // session()->forget('login');
+
+        session()->flush();
+
+        session()->invalidate();
+
+        session()->regenerate();
+
+        return redirect()->route('login');
+
     }
     
 }
