@@ -63,7 +63,7 @@
                         <button class="side-bar-option-button">Live Chat</button>
                     </div>
                     <div class="side-bar-option-div">
-                        <button id="report" class="side-bar-option-button">
+                        <button id="report" class="side-bar-option-button" @if($user->report) disabled @endif>
                             <a href="{{ route('report') }}">Report Invasion</a>
                         </button>
                     </div>
