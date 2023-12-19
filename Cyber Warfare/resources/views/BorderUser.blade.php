@@ -72,7 +72,8 @@
 
                     <img src="{{ asset('res/logout_icon.png') }}" alt="Logout_Icon" width="50px" height="50px"> 
 
-                    <a href="{{route('logout')}}">Log Out </a>
+                    <a href="{{ route('logout') }}" style="display: inline-block; padding: 10px 20px; margin-left: 10px; background-color: #3490dc; color: #fff; text-decoration: none; border-radius: 5px;">Log Out</a>
+
                 </div>
             </div>
             <div class="main-option-container">
