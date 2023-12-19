@@ -19,6 +19,10 @@ class LoginController extends Controller
             if($user->roleid == 2){
 
                 return redirect()->route('BorderUser');
+            } else if($user->role == 3){
+                return redirect()->route('admin');
+            } else if($user->role == 1){
+                return redirect()->route('StandardUser');
             }
 
         }

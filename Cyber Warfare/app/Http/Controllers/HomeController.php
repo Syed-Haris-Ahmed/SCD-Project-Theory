@@ -20,6 +20,8 @@ class HomeController extends Controller
                 return redirect()->route('BorderUser');
             }else if($user->roleid == 3){
                 return redirect()->route('admin');
+            }else if($user->roleid == 1){
+                return redirect()->route('StandardUser');
             }
 
         }

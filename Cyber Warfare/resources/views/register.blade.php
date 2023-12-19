@@ -83,11 +83,6 @@
                         return false;
                     }
             
-                    // Validate Email
-                    if (!validateEmail(email)) {
-                        alert('Please enter a valid email address');
-                        return false;
-                    }
             
                     // Validate Password
                     if (password === '') {
