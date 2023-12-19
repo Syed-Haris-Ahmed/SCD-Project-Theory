@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Report;
 
 class AdminController extends Controller
 {
@@ -12,8 +13,8 @@ class AdminController extends Controller
         $userid = session('userid');
         $user = User::where('userid',$userid)->first();
         $username = $user->username;
-
-        return view('admin',['username'=> $username]);
+        $reports = Report::all()->toArray();
+        return view('admin',['username'=> $username , 'reports'=> $reports]);
     }
 
     
