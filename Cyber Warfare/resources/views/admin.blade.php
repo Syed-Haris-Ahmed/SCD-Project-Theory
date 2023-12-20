@@ -66,7 +66,8 @@
                     <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
                         <h1>Activate Live Chat</h1>
                         <div class="live-chat-activation">
-                            <button class="live-chat-buttons" style="color: lime;">Activate</button> <button class="live-chat-buttons" style="color: red; margin-left: 16px">Dissable</button>
+                          <a href="{{route('activate')}}">  <button class="live-chat-buttons" style="color: lime;">Activate</button> </a> 
+                          <a href="{{route('disable')}}"> <button class="live-chat-buttons" style="color: red; margin-left: 16px">Disable</button> </a>
                         </div>
                     </div>
                 </div>

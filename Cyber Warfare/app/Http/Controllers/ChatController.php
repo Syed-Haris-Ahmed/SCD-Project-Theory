@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Message;
 use App\Models\User;
+use App\Models\LiveChat;
 use Illuminate\Http\Request;
 
 class ChatController extends Controller
@@ -11,6 +12,8 @@ class ChatController extends Controller
     public function index()
     {
         // Retrieve chat history from the database
+        $liveChat = LiveChat::first();
+        if($liveChat->status == 1){
         $chatHistory = Message::all(); // Fetch all messages (modify as needed)
         // $user = User::where('userid',$chatHistory->userid)->first();
         $currentuserid = session('userid');
@@ -19,6 +22,9 @@ class ChatController extends Controller
          $username = $user->username;
         // Return chat history as JSON
         return view('chat', ['chatHistory' => $chatHistory,'username' => $username]);
+        } else {
+            return view('disabled');
+        }
     }
 
     public function sendMessage(Request $request)

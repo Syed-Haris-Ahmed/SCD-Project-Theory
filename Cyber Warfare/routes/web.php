@@ -59,4 +59,6 @@ Route::get('/about-us', [AboutController::class,'index'])->name('about');
 
 Route::get('/admin', [AdminController::class,'index'])->name('admin');
 
+Route::get('/activate', [AdminController::class,'activate'])->name('activate');
 
+Route::get('/disable', [AdminController::class,'disable'])->name('disable');
