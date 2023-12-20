@@ -117,7 +117,7 @@
                         <button class="live-chat" style="background-color: #7F2982;">Live Chat 6</button>
                     </div> -->
                     <h1>Report</h1>
-                    <form method="POST">
+                    <form method="POST" action="{{route('subreport')}}">
                     @csrf
                         <div>
                             <label for="title">Title</label>

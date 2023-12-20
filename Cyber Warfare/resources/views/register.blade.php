@@ -54,19 +54,6 @@
                     <option value="Taftan">Taftan, Balochistan</option>
                     <option value="Chaman">Chaman, Balochistan</option>
                     <option value="Kasur">Kasur, Punjab</option>
-                    <option value="Narowal">Narowal, Punjab</option>
-                    <option value="Sialkot">Sialkot, Punjab</option>
-                    <option value="Gilgit">Gilgit, Gilgit-Baltistan</option>
-                    <option value="Skardu">Skardu, Gilgit-Baltistan</option>
-                    <option value="Chachro">Chachro, Sindh</option>
-                    <option value="Torkham">Torkham, Khyber Pakhtunkhwa</option>
-                    <option value="Gwadar">Gwadar, Balochistan</option>
-                    <option value="Parachinar">Parachinar, Khyber Pakhtunkhwa</option>
-                    <option value="Ormara">Ormara, Balochistan</option>
-                    <option value="Mastung">Mastung, Balochistan</option>
-                    <option value="Dalbandin">Dalbandin, Balochistan</option>
-                    <option value="Rawalkot">Rawalkot, Azad Jammu and Kashmir</option>
-                    <option value="Turbat">Turbat, Balochistan</option>
                     <!-- Add more options as needed -->
                 </select>
             </div>

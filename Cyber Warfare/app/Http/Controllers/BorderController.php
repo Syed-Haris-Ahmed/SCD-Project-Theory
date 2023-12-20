@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Report;
 
 class BorderController extends Controller
 {
@@ -26,5 +27,19 @@ class BorderController extends Controller
             $user->save();
         }
         return redirect()->route('BorderUser');
+    }
+
+    public function submitReport(Request $request){
+
+        $userid = session('userid');
+        $user = User::where('userid',$userid)->first();
+        $report = new Report();
+        $report->userid = $user->userid;
+        $report->title = $request->title;
+        $report->description = $request->description;
+        $report->save();
+
+        return redirect()->route('BorderUser');
+
     }
 }

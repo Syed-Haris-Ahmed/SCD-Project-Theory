@@ -62,3 +62,5 @@ Route::get('/admin', [AdminController::class,'index'])->name('admin');
 Route::get('/activate', [AdminController::class,'activate'])->name('activate');
 
 Route::get('/disable', [AdminController::class,'disable'])->name('disable');
+
+Route::post('/submit-report', [BorderController::class,'submitReport'])->name('subreport');
