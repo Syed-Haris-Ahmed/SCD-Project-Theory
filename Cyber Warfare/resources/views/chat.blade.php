@@ -11,8 +11,8 @@
         <div class="main-container">
             <a href="{{ route('BorderUser') }}" style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 5px; border: 1px solid #007bff;">Dashboard</a>
             <div class="live-chat-div">
+                <h4 style="text-align: center; color: white; display: block;">Location: {{$location}}</h4>
                 <h1 style="text-align: center; color: white;"> LIVE CHAT </h1>
-
                 <!-- Chat messages container -->
                 <div id="chat-messages">
                     <!-- Existing messages will be loaded here -->

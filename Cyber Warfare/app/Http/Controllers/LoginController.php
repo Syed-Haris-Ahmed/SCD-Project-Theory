@@ -50,16 +50,20 @@ class LoginController extends Controller
                 session(['userid' => $user->userid]);
                 // $request->session()->put('username', $user->username);
                 session(['username' => $user->username]);
+
+                session(['location' => $user->locations]);
+
                 if($user->roleid == 2){
                     return redirect()->route('BorderUser');
                 }else if($user->roleid == 3){
                     
                     return redirect()->route('admin');
-                }else {
-                    return redirect()->route('home');
+                }else if($user->roleid ==1) {
+                    return redirect()->route('standard');
                 }
             } else {
                 // Authentication failed
+                return redirect()->route('home');
                 error_log("Authentication failed");
                 error_log("Outside if statement");
                 error_log($user->password);

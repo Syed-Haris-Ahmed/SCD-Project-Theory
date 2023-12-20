@@ -18,6 +18,7 @@ class Message extends Model
     protected $fillable=[
         'messageid',
         'userid',
-        'content'
+        'content',
+        'city'
     ];
 }
