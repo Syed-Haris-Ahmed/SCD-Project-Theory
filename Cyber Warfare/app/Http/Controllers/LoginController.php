@@ -19,12 +19,9 @@ class LoginController extends Controller
             if($user->roleid == 2){
 
                 return redirect()->route('BorderUser');
-            } else if($user->role == 3){
+            } else if($user->roleid == 3){
                 return redirect()->route('admin');
-            } else if($user->role == 1){
-                return redirect()->route('StandardUser');
-            }
-            else if($user->roleid==1){
+            } else if($user->roleid == 1){
                 return redirect()->route('StandardUser');
             }
         }
@@ -59,11 +56,11 @@ class LoginController extends Controller
                     
                     return redirect()->route('admin');
                 }else if($user->roleid ==1) {
-                    return redirect()->route('standard');
+                    return redirect()->route('StandardUser');
                 }
             } else {
                 // Authentication failed
-                return redirect()->route('home');
+                return redirect()->route('login');
                 error_log("Authentication failed");
                 error_log("Outside if statement");
                 error_log($user->password);

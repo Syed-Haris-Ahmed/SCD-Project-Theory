@@ -25,7 +25,7 @@ use App\Http\Controllers\StandardController;
 */
 
 Route::get('/', function () {
-    return redirect()->route('home');
+    return redirect()->route('login');
 });
 
 Route::get('/standarduser', function() {
